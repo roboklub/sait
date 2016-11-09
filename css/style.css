@@ -1,0 +1,56 @@
+html, head, body, header, section, div, nav, ul, li, a, span, h1, h2, h3, img{
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  font: 18px Garamond, Verdana, sans-serif;
+}
+
+.clearFix{
+  clear: both;
+}
+
+/* START GLOBAL NAVIGATION */
+  header{
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    background: yellowgreen;
+    border-bottom: 1px solid #557316;
+    line-height: 1.5em;
+  }
+
+  #logo_content, #main_navigation,  #main_navigation ul li{
+    display: inline-block;
+  }
+
+  #main_navigation ul li a{
+    text-decoration: none;
+    color: #222;
+    font-size: 1.5em;
+  }
+
+  #main_navigation ul li a:hover{
+    
+  }
+
+  #main_navigation{
+    float: right;
+    vertical-align: center;
+  }
+
+  .header_content{
+    margin: 0 auto;
+    width: 70%;
+  }
+
+
+
+
+
+
+
+
+/* END GLOBAL NAVIGATION */
