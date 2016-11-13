@@ -7,18 +7,14 @@
       <ul>
         <li>
           <a href="#">Начало</a>
-        </li>
-        <li>
+        </li><li>
           <a href="#">Портфолио</a>
-        </li>
-        <li>
+        </li><li>
           <a href="#">За нас</a>
-        </li>
-        <li>
+        </li><li>
           <a href="#">Контакти</a>
-        </li>
-        <li>
-          <a href="#">Влизане</a>
+        </li><li>
+          <a href="#">Моят профил</a>
         </li>
       </ul>
     </nav>
