@@ -56,7 +56,6 @@ if($first_password!=$second_password){
         echo "\t<div class=\"error fade\">".$error_value."</div>\n";
       }
     }else{
-      $connection     = mysqli_connect('localhost', 'root', '', 'roboclub');
       $options        = ['cost' => 16,];
       $username       = mysqli_real_escape_string($connection, $username);
       $email          = mysqli_real_escape_string($connection, $email);
