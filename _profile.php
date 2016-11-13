@@ -15,6 +15,7 @@
       if ($user_picture = mysqli_query($connection, 'SELECT * FROM `members` WHERE user_name = \''.$_SESSION['isLogged']['username'].'\'' )) {
         while ($fetching_user_pic = mysqli_fetch_assoc($user_picture)) {
 
+
           if ($fetching_user_pic['user_profile_pic'] == 'none') {
             echo "<img class=\"default_user_picture\" src=\"img/defaultIcon.png\" /> ";
           }else {
@@ -28,14 +29,17 @@
       Потребителско име<?php echo " : <span>".$_SESSION['isLogged']['username']."</span>"; ?>
     </p>
     <p class="gender">
-      Пол: <?php if (!$fetching_user_pic['gender'] == '') {
-        echo $fetching_user_pic['gender'];
-      }else{
-        echo 'няма';
-      } ?>
+      Пол:
+      <?php
+        if (!$fetching_user_pic['gender'] == '') {
+          echo $fetching_user_pic['gender'];
+        }else{
+          echo 'няма';
+        }
+      ?>
     </p>
     <p>
-      е-майл:
+      е-майл:<?php echo $fetching_user_pic['user_email']; ?>
     </p>
     <p class="actualize_information">
       <a href="">Промени</a>
