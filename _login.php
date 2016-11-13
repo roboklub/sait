@@ -3,6 +3,7 @@
     'pageName' => 'Влизане', //this is the current page name
     'favicon' => 'img/UKTC.png', //this is the url or path for the favicon
     'css' => ['css/style.css','css/login.css'], //this is css urls or paths, don't make keys just add one and then ','
+    'script' => ["https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"],//this is javascript urls or paths, don't make keys just add one and then ','
   ];
 
   include 'templates/classic_header.php'; // include the header file becoause the DRY(Don't Repeat Yourself) convention and its easy to change things
@@ -27,22 +28,32 @@
     $password      = trim($_POST['password']);
     $password      = mysqli_real_escape_string($connection, $password);
     $get_user_data = 'SELECT `username`, `password`, `e-mail` FROM `members` WHERE 1';
+    $error         = array();
 
-    if (mb_strlen($username) < 1 || mb_strlen($password) < 1 ) {
-      echo "<div class=\"error fade\">Потребителското име или парола са невалидни</div>";
+    if (mb_strlen($username) < 4 || mb_strlen($password) < 4 ) {
+      $error[] = 'Потребителското име или парола са невалидни';
+    }else if(mb_strlen($username) > 64 && mb_strlen($password) > 64){
+      $error[] = 'Потребителското име или парола са прекалено дълги';
     }
 
    // get users data from the database and then the data get fetch and if the username or password are valid he will be redirected to other page
 
 
+   if (!count($error) < 1) {
+     if ($user_data = mysqli_query($connection, $get_user_data)) {
+       while ($fetch_data = mysqli_fetch_assoc($user_data)) {
+         //echo '<pre>'. print_r($fetch_data ,true) .'</pre>';
+       }
+     }
+   }else{
+     foreach ($error as $error_value) {
+       echo '<pre>'. print_r($error_value ,true) .'</pre>';
+       echo "\t<div class=\"error fade\">".$error_value."</div>\n";
+     }
+   }
 
 
 
-    if ($user_data = mysqli_query($connection, $get_user_data)) {
-      while ($fetch_data = mysqli_fetch_assoc($user_data)) {
-        echo '<pre>'. print_r($fetch_data ,true) .'</pre>';
-      }
-    }
 
   }
 
