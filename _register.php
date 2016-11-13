@@ -26,8 +26,8 @@
   if ($_POST && isset($_POST['submitBtn'])) {
     $username        = trim($_POST['username']);
     $email           = trim($_POST['email']);
-    $first_password  = trim($_POST['username']);
-    $second_password = trim($_POST['username']);
+    $first_password  = trim($_POST['first_password']);
+    $second_password = trim($_POST['second_password']);
     $error           = array();
 
     /*

@@ -1,4 +1,4 @@
-<?php $_SESSION['isLogged'] = true; ?>
+<?php $_SESSION['isLogged'] = false; ?>
 
 <header>
   <div class="header_content">
@@ -8,7 +8,7 @@
     <nav id="main_navigation">
       <ul>
         <li>
-          <a href="#">Начало</a>
+          <a href="index.php">Начало</a>
         </li><li>
           <a href="#">Портфолио</a>
         </li><li>
@@ -20,8 +20,8 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Моят профил</a>
           <div class="dropdown-content" id="myDropdown">
-            <a href="#">Влизане</a>
-            <a href="#">Регистрирай се</a>
+            <a href="_login.php">Влизане</a>
+            <a href="_register.php">Регистрирай се</a>
           </div>
         </li>
         <?php
