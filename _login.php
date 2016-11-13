@@ -9,8 +9,7 @@
 
   include 'templates/classic_header.php'; // include the header file becoause the DRY(Don't Repeat Yourself) convention and its easy to change things
   include 'templates/classic_navigation_bar.php'; // include the global navigation bar
-?><div style="display: block; height: 100px;">
-</div>
+?>
 <div class="content">
   <h2><?php echo $pageInfo['pageName']; //if you change the page name it automaticaly change the h2 content?></h2>
   <form class="login_form" method="post">
@@ -28,7 +27,7 @@
     $username      = mysqli_real_escape_string($connection, $username);
     $password      = trim($_POST['password']);
     $password      = mysqli_real_escape_string($connection, $password);
-    $get_user_data = 'SELECT `username`, `password`, `e-mail` FROM `members` WHERE 1';
+    $get_user_data = 'SELECT `user_name`, `user_password`, `user_email` FROM `members` WHERE 1';
     $error         = array();
 
     if (mb_strlen($username) < 4 || mb_strlen($password) < 4 ) {
@@ -43,7 +42,7 @@
    if (count($error) < 1) {
      if ($user_data = mysqli_query($connection, $get_user_data)) {
        while ($fetch_data = mysqli_fetch_assoc($user_data)) {
-         if ($username == $fetch_data['username'] && $password == password_verify($username, $fetch_data['password'])) {
+         if ($username == $fetch_data['user_name'] && $password == password_verify($username, $fetch_data['user_password'])) {
            $_SESSION['isLogged'] = [
              'username' => $username,
            ];

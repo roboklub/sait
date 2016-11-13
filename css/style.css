@@ -9,6 +9,7 @@ h3{
 }
 
 body{
+  background: #e9ebee;
   font: 18px Garamond, Verdana, sans-serif;
 }
 
@@ -47,8 +48,6 @@ body{
   }
 
   #main_navigation ul li a:hover{
-    color: #ddd;
-
     -o-transition: 0.2s;
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
@@ -101,7 +100,8 @@ body{
   }
 
   .dropdown > a:after{
-    content: '↓';
+    margin-left: 5px;
+    content: '  ↓';
   }
 
   .dropdown-content a:hover {background-color: #f1f1f1}
@@ -139,3 +139,64 @@ body{
   margin-top: 10px;
   border: 1px solid yellowgreen;
 }
+
+
+
+/* START PROFILE PAGE */
+  .profile_content{
+    width: 550px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding: 25px;
+  }
+
+  .profile_picture{
+    display: inline-block;
+    float: left;
+    width: 200px;
+  }
+
+  .profile_picture_functions{
+    display: inline-block;
+    float: right;
+    width: 349px;
+    text-align: center;
+    background: #eee;
+    border: 1px solid #c1c0c0;
+    height: 199px;
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .profile_picture_functions p{
+    margin: 0;
+    line-height: 25px;
+  }
+
+  .profile_picture_functions h2{
+    height: 40px;
+    color: #c37c7c;
+    background: #ddd;
+    border-bottom: 2px solid #c1c0c0;
+  }
+
+  .actualize_information a{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid yellowgreen;
+    margin-top: 10px;
+    color: #222;
+    text-decoration: none;
+  }
+
+  .actualize_information a:hover{
+    -o-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    background: yellowgreen;
+    color: #fff;
+  }
+/* END PROFILE PAGE */

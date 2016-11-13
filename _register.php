@@ -61,7 +61,7 @@ if($first_password!=$second_password){
       $email          = mysqli_real_escape_string($connection, $email);
       $password       = mysqli_real_escape_string($connection, $password);
       $password       = password_hash($password, PASSWORD_BCRYPT, $options);
-      $insert_into_db = 'INSERT INTO `members`(`username`, `password`, `e-mail`) VALUES (\''.$username.'\',\''.$password.'\', \''.$email.'\')';
+      $insert_into_db = 'INSERT INTO `members`(`user_name`, `user_password`, `user_email`) VALUES (\''.$username.'\',\''.$password.'\', \''.$email.'\')';
       $q              = mysqli_query($connection, $insert_into_db);
 
       if ($q) {
