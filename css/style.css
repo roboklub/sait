@@ -2,7 +2,11 @@ html, head, body, header, section, div, nav, ul, li, a, span, h1, h2, h3, img{
   margin: 0;
   padding: 0;
 }
-
+h3{
+	color:#19B6BD;
+	margin-left:100px;
+	margin-right:100px;
+}
 
 body{
   font: 18px Garamond, Verdana, sans-serif;
