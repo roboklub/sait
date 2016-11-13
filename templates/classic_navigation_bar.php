@@ -1,5 +1,7 @@
-<?php $_SESSION['isLogged'] = false; ?>
-
+<?php
+  error_reporting(E_ALL ^ E_NOTICE);//stop the notices from php
+  $arr = $_SESSION['isLogged'];
+ ?>
 <header>
   <div class="header_content">
     <div id="logo_content">
@@ -16,22 +18,22 @@
         </li><li>
           <a href="#">Контакти</a>
         </li>
-        <?php if (!$_SESSION['isLogged']){?>
+        <?php if (is_array($arr)){?>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()"><?php echo $arr['username']?></a>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">Профил</a>
+              <a href="_destroy.php">Изход</a>
+            </div>
+          </li>
+        <?php
+        }else{
+        ?>
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Моят профил</a>
           <div class="dropdown-content" id="myDropdown">
             <a href="_login.php">Влизане</a>
             <a href="_register.php">Регистрирай се</a>
-          </div>
-        </li>
-        <?php
-        }else{
-        ?>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Настройки</a>
-          <div class="dropdown-content" id="myDropdown">
-            <a href="#">Профил</a>
-            <a href="#">Изход</a>
           </div>
         </li>
         <?php } ?>

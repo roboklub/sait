@@ -1,4 +1,5 @@
 <?php
+  $_SESSION['isLogged'] = false;
   $pageInfo = [
     'pageName' => 'Влизане', //this is the current page name
     'favicon' => 'img/UKTC.png', //this is the url or path for the favicon
@@ -31,23 +32,28 @@
     $error         = array();
 
     if (mb_strlen($username) < 4 || mb_strlen($password) < 4 ) {
-      $error[] = 'Потребителското име или парола са невалидни';
+      $error[] = 'Потребителското име или парола са невалидни!';
     }else if(mb_strlen($username) > 64 && mb_strlen($password) > 64){
-      $error[] = 'Потребителското име или парола са прекалено дълги';
+      $error[] = 'Потребителското име или парола са прекалено дълги!';
     }
 
    // get users data from the database and then the data get fetch and if the username or password are valid he will be redirected to other page
 
 
-   if (!count($error) < 1) {
+   if (count($error) < 1) {
      if ($user_data = mysqli_query($connection, $get_user_data)) {
        while ($fetch_data = mysqli_fetch_assoc($user_data)) {
-         //echo '<pre>'. print_r($fetch_data ,true) .'</pre>';
+         if ($username == $fetch_data['username'] && $password == password_verify($username, $fetch_data['password'])) {
+           $_SESSION['isLogged'] = [
+             'username' => $username,
+           ];
+           header('Location: index.php');
+           exit;
+         }
        }
      }
    }else{
      foreach ($error as $error_value) {
-       echo '<pre>'. print_r($error_value ,true) .'</pre>';
        echo "\t<div class=\"error fade\">".$error_value."</div>\n";
      }
    }
