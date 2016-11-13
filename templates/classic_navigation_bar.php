@@ -1,3 +1,5 @@
+<?php $_SESSION['isLogged'] = true; ?>
+
 <header>
   <div class="header_content">
     <div id="logo_content">
@@ -13,13 +15,26 @@
           <a href="#">За нас</a>
         </li><li>
           <a href="#">Контакти</a>
-        </li><li class="dropdown">
+        </li>
+        <?php if (!$_SESSION['isLogged']){?>
+        <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Моят профил</a>
           <div class="dropdown-content" id="myDropdown">
             <a href="#">Влизане</a>
             <a href="#">Регистрирай се</a>
           </div>
         </li>
+        <?php
+        }else{
+        ?>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Настройки</a>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Профил</a>
+            <a href="#">Изход</a>
+          </div>
+        </li>
+        <?php } ?>
       </ul>
     </nav>
     <div class="clearFix"></div>
