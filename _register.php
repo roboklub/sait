@@ -13,8 +13,8 @@
   <h2><?php echo $pageInfo['pageName']; //if you change the page name it automaticaly change the h2 content?></h2>
   <form class="login_form" method="post">
     <input type="text" name="username" placeholder="Потребителско име.."  />
-    <input type="text" name="email" placeholder="Имейл адрес.."  />
-    <input type="text" name="first_password" placeholder="Парола.."  />
+    <input type="email" name="email" placeholder="Имейл адрес.."  />
+    <input type="password" name="first_password" placeholder="Парола.."  />
     <input type="password" name="second_password" placeholder="Повтори парола.." /><br>
     <input type="submit" name="submitBtn" value="Регистирай ме" />
     <p class="register_link">
@@ -29,15 +29,35 @@
     $first_password  = trim($_POST['username']);
     $second_password = trim($_POST['username']);
     $error           = array();
+
     /*
       trim function delete the whitespace in the begining and the end of the post information
+      error variable is for collecting the errors from the validation
     */
 
-    echo '<pre>'. print_r($_POST ,true) .'</pre>';
-
-    if (condition) {
-      # code...
+    if ($first_password == $second_password) {
+      $password = $first_password;
     }
+
+    if (mb_strlen($username) < 4) {
+      $error[] = 'Потребителското име трябва да е минимум 4 символа.';
+    }
+
+    if (mb_strlen($password) < 6) {
+      $error[] = 'Паролата трябва да е минимум 6 символа.';
+    }
+
+    if (!count($error) < 1) {
+      foreach ($error as $error_value) {
+        echo "<div class=\"error\" >".$error_value."</div>\n\t";
+      }
+    }else{
+      echo "noproblemo";
+    }
+
+
+
+
   }
 
   include 'templates/classic_footer.php'; // include the global footer

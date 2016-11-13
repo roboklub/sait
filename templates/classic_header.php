@@ -1,3 +1,6 @@
+<?php
+  mb_strlen('utf8');
+ ?>
 <!DOCTYPE html>
 <html>
 <head>

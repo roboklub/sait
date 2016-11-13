@@ -15,7 +15,7 @@ form input{
   border: 1px solid #ddd;
 }
 
-input[type='text'], input[type='password']{
+input[type='text'], input[type='password'], input[type='email']{
   padding-left: 5px;
   border-color: #C2C0C0;
 }
