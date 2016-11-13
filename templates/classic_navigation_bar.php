@@ -13,8 +13,12 @@
           <a href="#">За нас</a>
         </li><li>
           <a href="#">Контакти</a>
-        </li><li>
-          <a href="#">Моят профил</a>
+        </li><li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Моят профил</a>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Влизане</a>
+            <a href="#">Регистрирай се</a>
+          </div>
         </li>
       </ul>
     </nav>
