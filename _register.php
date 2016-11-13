@@ -12,16 +12,33 @@
 <div class="content">
   <h2><?php echo $pageInfo['pageName']; //if you change the page name it automaticaly change the h2 content?></h2>
   <form class="login_form" method="post">
-    <input type="text" name="name" placeholder="Потребителско име.."  />
-    <input type="text" name="name" placeholder="Имейл адрес.."  />
-    <input type="text" name="name" placeholder="Парола.."  />
-    <input type="password" name="name" placeholder="Повтори парола.." /><br>
-    <input type="submit" name="name" value="Регистирай ме" />
+    <input type="text" name="username" placeholder="Потребителско име.."  />
+    <input type="text" name="email" placeholder="Имейл адрес.."  />
+    <input type="text" name="first_password" placeholder="Парола.."  />
+    <input type="password" name="second_password" placeholder="Повтори парола.." /><br>
+    <input type="submit" name="submitBtn" value="Регистирай ме" />
     <p class="register_link">
       <a href="#">Вход</a>
     </p>
   </form>
 </div>
 <?php
+  if ($_POST && isset($_POST['submitBtn'])) {
+    $username        = trim($_POST['username']);
+    $email           = trim($_POST['email']);
+    $first_password  = trim($_POST['username']);
+    $second_password = trim($_POST['username']);
+    $error           = array();
+    /*
+      trim function delete the whitespace in the begining and the end of the post information
+    */
+
+    echo '<pre>'. print_r($_POST ,true) .'</pre>';
+
+    if (condition) {
+      # code...
+    }
+  }
+
   include 'templates/classic_footer.php'; // include the global footer
 ?>
