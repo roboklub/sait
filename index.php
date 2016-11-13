@@ -10,8 +10,6 @@
 ?>
 
 
-
-
 <?php
   include 'templates/classic_footer.php'; // include the global footer
 ?>
