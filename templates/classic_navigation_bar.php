@@ -12,9 +12,14 @@
         <li>
           <a href="index.php">Начало</a>
         </li><li>
-          <a href="#">Портфолио</a>
-        </li><li>
-          <a href="#">За нас</a>
+        <a href="news.php">Новини</a>
+        </li>
+<li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">За нас</a>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="_register.php">Портфолио</a>
+            <a href="#">Контакти</a>
+          </div>
         </li><li>
           <a href="#">Контакти</a>
         </li>
