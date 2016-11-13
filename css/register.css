@@ -9,12 +9,3 @@ form input{
   border-radius: 4px !important;
   border: 1px solid #C2C0C0 !important;
 }
-
-.error{
-  padding: 20px;
-  background: rgba(255,0,0,0.6);
-  margin: 0 auto;
-  width: 400px;
-  margin-top: 10px;
-  border: 1px solid red;
-}

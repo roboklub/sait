@@ -13,8 +13,14 @@
       }
     }
     if (array_key_exists('css', $pageInfo)) {
-      foreach ($pageInfo['css'] as $key => $value) {
-        echo "  <link rel=\"stylesheet\" href=\"".$value."\" />\n";
+      foreach ($pageInfo['css'] as $key => $css_value) {
+        echo "  <link rel=\"stylesheet\" href=\"".$css_value."\" />\n";
+      }
+    }
+
+    if (array_key_exists('script', $pageInfo)) {
+      foreach ($pageInfo['script'] as $key => $script_value) {
+        echo "  <script src=\"".$script_value."\" ></script>\n";
       }
     }
   ?>

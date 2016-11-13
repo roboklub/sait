@@ -16,7 +16,7 @@
     <input type="password" name="name" placeholder="Парола.." /><br>
     <input type="submit" name="name" value="Влизане" />
     <p class="register_link">
-      <a href="#">Регистрирай се</a>
+      <a href="_register.php">Регистрирай се</a>
     </p>
   </form>
 </div>

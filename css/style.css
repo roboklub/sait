@@ -109,4 +109,25 @@ body{
   }
 
 
+
 /* END GLOBAL NAVIGATION */
+
+
+
+.error{
+  padding: 20px;
+  background: rgba(255,0,0,0.6);
+  margin: 0 auto;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid red;
+}
+
+.success{
+  padding: 20px;
+  background: rgba(0,255,0,0.6);
+  margin: 0 auto;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid yellowgreen;
+}
