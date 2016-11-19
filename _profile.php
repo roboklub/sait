@@ -1,8 +1,9 @@
 <?php
   $pageInfo = [
-    'pageName' => 'Начало', //this is the current page name
+    'pageName' => 'Профил', //this is the current page name
     'favicon' => 'img/UKTC.png', //this is the url or path for the favicon
     'css' => ['css/style.css'], //this is css urls or paths, don't make keys just add one and then ','
+    'script' => ["https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"],//this is javascript urls or paths, don't make keys just add one and then ','
   ];
 
   include 'templates/classic_header.php'; // include the header file becoause the DRY(Don't Repeat Yourself) convention and its easy to change things
@@ -19,10 +20,11 @@
           if ($fetching_user_pic['user_profile_pic'] == 'none') {
             echo "<img class=\"default_user_picture\" src=\"img/defaultIcon.png\" /> ";
           }else {
-            echo "<img class=\"user_picture\" src=\"".$fetching_user_pic['user_profile_pic']."\" ";
+            echo "<img class=\"user_picture\" src=\"".$fetching_user_pic['user_profile_pic']."\"> ";
           }
     ?>
   </div>
+
   <div class="profile_picture_functions">
     <h2>Информация</h2>
     <p class="username_text">
@@ -39,17 +41,58 @@
       ?>
     </p>
     <p>
-      е-майл:<?php echo $fetching_user_pic['user_email']; ?>
+      е-майл: dsaddsadsasdsa<?php echo $fetching_user_pic['user_email']; ?>
+    </p>
+    <p>
+      Постове:
     </p>
     <p class="actualize_information">
-      <a href="">Промени</a>
+      <a href="_profile.php?modify=true" class="clickable">Промени</a>
     </p>
   </div>
 
   <div class="clearFix"></div>
 </div>
 <?php
+  }
 }
-}
+  if ($_GET['modify'] == 'true') {
+    ?>
+      <div class="update_info_close_btn">
+
+        <div id="close">
+          <a id="close" href="javascript:void(0)" onclick="show('update_info','close');">Затвори</a>
+        </div>
+      </div>
+      <div class="update_info" id="update_info">
+        <h3>Промени информацията</h3>
+        <form method="post">
+          <label for="username_input">Ново потребителско име: </label>
+          <input id="username_input" type="text" name="username"  />
+
+          <label for="file_input">Смени профилната снимка:</label>
+          <input id="file_input" type="file" name="name" value="">
+
+          <label for="email_input">Нов имейл адрес:</label>
+          <input id="email_input" type="email" name="email" />
+
+          <input type="hidden" name="current_username" value="">
+
+          <label for="gender_select">Смени пол:</label>
+          <select id="gender_select" name="gender">
+            <option value="none">Пол:</option>
+            <option value="saab">Мъж</option>
+            <option value="mercedes">Жена</option>
+            <option value="audi">Други</option>
+          </select>
+
+          <label for="password_input">Потвърди парола:</label>
+          <input id="password_input" type="password" name="password"  />
+
+          <input class="clickable" type="submit" name="submitBtn" value="Запази">
+        </form>
+      </div>
+    <?php
+  }
   include 'templates/classic_footer.php'; // include the global footer
 ?>

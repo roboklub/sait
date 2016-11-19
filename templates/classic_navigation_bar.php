@@ -12,13 +12,13 @@
         <li>
           <a href="index.php">Начало</a>
         </li><li>
-          <a href="#">Портфолио</a>
+          <a href="#">Постове</a>
         </li><li>
-          <a href="#">Контакти</a>
+          <a href="#">За Нас</a>
         </li>
         <?php if (is_array($arr)){?>
           <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()"><?php echo $arr['username']?></a>
+            <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()" ><?php echo $arr['username']?></a>
             <div class="dropdown-content" id="myDropdown">
               <a href="_profile.php">Моят профил</a>
               <a href="_destroy.php">Изход</a>
@@ -28,7 +28,7 @@
         }else{
         ?>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Моят профил</a>
+          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()" >Моят профил</a>
           <div class="dropdown-content" id="myDropdown">
             <a href="_login.php">Влизане</a>
             <a href="_register.php">Регистрирай се</a>
@@ -40,4 +40,3 @@
     <div class="clearFix"></div>
   </div>
 </header>
-<div style="display: block; height: 100px;"></div>
