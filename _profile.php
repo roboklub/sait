@@ -66,24 +66,24 @@
       </div>
       <div class="update_info" id="update_info">
         <h3>Промени информацията</h3>
-        <form method="post">
+        <form method="post" enctype='multipart/form-data'>
           <label for="username_input">Ново потребителско име: </label>
           <input id="username_input" type="text" name="username"  />
 
           <label for="file_input">Смени профилната снимка:</label>
-          <input id="file_input" type="file" name="name" value="">
+          <input id="file_input" type="file" name="user_pic" value="">
 
           <label for="email_input">Нов имейл адрес:</label>
           <input id="email_input" type="email" name="email" />
 
-          <input type="hidden" name="current_username" value="">
+          <input type="hidden" name="current_username" value="<?php echo $_SESSION['isLogged']['username'] ?>">
 
           <label for="gender_select">Смени пол:</label>
           <select id="gender_select" name="gender">
             <option value="none">Пол:</option>
-            <option value="saab">Мъж</option>
-            <option value="mercedes">Жена</option>
-            <option value="audi">Други</option>
+            <option value="1">Мъж</option>
+            <option value="2">Жена</option>
+            <option value="3">Други</option>
           </select>
 
           <label for="password_input">Потвърди парола:</label>
@@ -93,6 +93,31 @@
         </form>
       </div>
     <?php
+
+    if($_POST){
+      $new_username = trim($_POST['username']);
+      $new_username = mysqli_real_escape_string($connection ,$new_username);
+
+      $new_email    = trim($_POST['email']);
+      $new_email    = mysqli_real_escape_string($connection, $new_email);
+
+      $new_gender   = trim($_POST['gender']);
+      $new_gender   = mysqli_real_escape_string($connection, $new_gender);
+
+      $target_Path = "";
+      $target_Path = $target_Path.basename($_FILES['user_pic']['name']);
+      $move_files  = move_uploaded_file($_FILES['user_pic']['tmp_name'], $target_Path);
+
+
+      if (!$move_files) {
+        echo $target_Path;
+        echo "ERROR ";
+      }
+    }
+
+    echo "<pre>".print_r($_POST ,true)."</pre>";
   }
+
+
   include 'templates/classic_footer.php'; // include the global footer
 ?>
