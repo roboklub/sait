@@ -31,9 +31,8 @@
 			padding: 20px;
 		}
 		.fluid_container {
-			margin: 0 auto;
-			max-width: 1000px;
-			width: 90%;
+			
+			width: 100%;	
 		}
 	</style>
 
@@ -68,22 +67,22 @@
 <body>
 	<div class="fluid_container">
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-            <div data-thumb="thumbs/img1.jpg" data-src="galleries/indexgallery/img/img1.jpg">
+            <div data-thumb="thumbs/img1.jpg" data-src="galleries/indexgallery/img/1.jpg">
                 <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+                    Това са снимки от откриването на Робоклуба <em>Try to resize the browser window</em>
                 </div>
             </div>
-            <div data-thumb="thumbs/img2.jpg" data-src="galleries/indexgallery/img/img2.jpg">
+            <div data-thumb="thumbs/img2.jpg" data-src="galleries/indexgallery/img/2.jpg">
                 <div class="camera_caption fadeFromBottom">
                     It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
                 </div>
             </div>
-            <div data-thumb="thumbs/img3.jpg" data-src="galleries/indexgallery/img/img3.jpg">
+            <div data-thumb="thumbs/img3.jpg" data-src="galleries/indexgallery/img/3.jpg">
                 <div class="camera_caption fadeFromBottom">
                     <em>It's completely free</em> (even if a donation is appreciated)
                 </div>
             </div>
-            <div data-thumb="thumbs/img4.jpg" data-src="galleries/indexgallery/img/img4.jpg">
+            <div data-thumb="thumbs/img4.jpg" data-src="galleries/indexgallery/img/4.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera slideshow provides many options <em>to customize your project</em> as more as possible
                 </div>

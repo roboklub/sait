@@ -27,5 +27,11 @@
       }
     }
   ?>
+    <link rel="stylesheet" id="camera-css"  href="galleries/camera.css" type="text/css" media="all"> 
+     <script type="text/javascript" src="galleries/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="galleries/scripts/jquery.mobile.customized.min.js"></script>
+    <script type="text/javascript" src="galleries/scripts/jquery.easing.1.3.js"></script> 
+    <script type="text/javascript" src="galleries/scripts/camera.min.js"></script> 
+</head>
 </head>
 <body>
