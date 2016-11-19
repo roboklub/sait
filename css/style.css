@@ -227,6 +227,7 @@ body{
 }
 
   .update_info{
+    margin-bottom: 15px;
     text-align: center;
     border: 1px solid #c1c0c0;
     border-radius: 4px;
