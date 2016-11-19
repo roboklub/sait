@@ -42,13 +42,15 @@
    if (count($error) < 1) {
      if ($user_data = mysqli_query($connection, $get_user_data)) {
        while ($fetch_data = mysqli_fetch_assoc($user_data)) {
-         if ($username == $fetch_data['user_name'] && $password == password_verify($username, $fetch_data['user_password'])) {
+
+         if ($username == $fetch_data['user_name'] && $password == password_verify($password, $fetch_data['user_password'])) {
+
            $_SESSION['isLogged'] = [
              'username' => $username,
            ];
            header('Location: index.php');
            exit;
-         }
+        }
        }
      }
    }else{

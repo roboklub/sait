@@ -17,3 +17,16 @@ window.onclick = function(e) {
     }
   }
 }
+
+function show(first_id, second_id) {
+   var first_element   = document.getElementById(first_id);
+   var second_element  = document.getElementById(second_id);
+
+   if(first_element.style.display == 'block'){
+      first_element.style.display = 'none';
+      second_element.style.display = 'none';
+   }else{
+      first_element.style.display = 'none';
+      second_element.style.display = 'none';
+   }
+}

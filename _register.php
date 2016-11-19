@@ -7,7 +7,7 @@
   ];
   include 'templates/classic_header.php'; // include the header file because the DRY(Don't Repeat Yourself) convention and its easy to change things
   include 'templates/classic_navigation_bar.php'; // include the global navigation bar
-?><div style="display: block; height: 100px;">
+?>
 </div>
 <div class="content">
   <h2><?php echo $pageInfo['pageName']; //if you change the page name it automaticaly change the h2 content?></h2>
@@ -32,7 +32,7 @@
 
 
     /*
-      trim function delete the whitespace in the begining and the end of the post information
+    *  trim function delete the whitespace in the begining and the end of the post information
       error variable is for collecting the errors from the validation
     */
 
