@@ -13,13 +13,18 @@
           <a href="index.php">Начало</a>
         </li><li>
           <a href="#">Постове</a>
-        </li><li>
-          <a href="#">За Нас</a>
+        </li> <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()" >За нас</a>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="team.php">Екип</a>
+            <a href="portfolio.php">Портфолио</a>
+            <a href="contact_us.php">Пишете ни</a>
+          </div>
         </li>
         <?php if (is_array($arr)){?>
           <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()" ><?php echo $arr['username']?></a>
-            <div class="dropdown-content" id="myDropdown">
+            <a href="javascript:void(0)" class="dropbtn1" onclick="myFunction1()" ><?php echo $arr['username']?></a>
+            <div class="dropdown-content1" id="myDropdown1">
               <a href="_profile.php">Моят профил</a>
               <a href="_destroy.php">Изход</a>
             </div>
@@ -28,8 +33,8 @@
         }else{
         ?>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()" >Моят профил</a>
-          <div class="dropdown-content" id="myDropdown">
+          <a href="javascript:void(0)" class="dropbtn1" onclick="myFunction1()" >Моят профил</a>
+          <div class="dropdown-content1" id="myDropdown1">
             <a href="_login.php">Влизане</a>
             <a href="_register.php">Регистрирай се</a>
           </div>

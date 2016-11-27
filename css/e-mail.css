@@ -1,0 +1,48 @@
+@charset "utf-8";
+  .email_form{
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid #c1c0c0;
+    border-radius: 4px;
+    background: #eee;
+	width:450px;
+	margin:0 auto;
+	margin-top:7%;
+  }
+  .email_form input, select, textarea{
+    margin-bottom: 15px !important;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+  .email_form h3{
+    margin: 0;
+    padding: 0;
+    padding: 10px 0;
+    color: #c37c7c;
+    background: #dddddd;
+    border-bottom: 2px solid #c1c0c0;
+    margin-bottom: 10px;
+  }
+ .email_form input[type='submit']{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid yellowgreen;
+    margin-top: 10px;
+    text-decoration: none;
+	 background: none;
+    font-size: 23px;
+    cursor: pointer;
+    font-weight: 100;
+    color: #666;
+  }
+.email_form input[type='submit']:hover{
+    -o-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    background: yellowgreen;
+    color: #fff;
+  }

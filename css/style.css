@@ -77,18 +77,18 @@ body{
       float: left;
   }
 
-  li a, .dropbtn {
+  li a, .dropbtn, .dropbtn1 {
       display: inline-block;
       color: #222;
       text-align: center;
       text-decoration: none;
   }
 
-  li.dropdown {
+  li.dropdown, li.dropdown1 {
       display: inline-block;
   }
 
-  .dropdown-content {
+  .dropdown-content,.dropdown-content1 {
       display: none;
       position: absolute;
       background-color: #f9f9f9;
@@ -98,7 +98,7 @@ body{
   .show a{
     color: black;
   }
-  .dropdown-content a {
+  .dropdown-content a,.dropdown-content1 a {
       color: #000;
       text-decoration: none;
       display: block;
@@ -114,15 +114,15 @@ body{
 
   .show {display:block;}
 
-  #myDropdown{
+  #myDropdown, #myDropdown1{
     z-index: 50;
   }
 
-  #myDropdown a{
+  #myDropdown a, #myDropdown1 a{
     color: #666 !important;
   }
 
-  #myDropdown a:hover{
+  #myDropdown a:hover, #myDropdown1 a:hover {
     color: #fff !important;
   }
 
